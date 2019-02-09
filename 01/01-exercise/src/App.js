@@ -4,6 +4,19 @@ import subscribeToMessages from "./messages";
 import FadeIn from "./FadeIn";
 
 class PinScrollToBottom extends Component {
+
+  scroll = () => {
+    window.scrollTo(0, document.documentElement.scrollHeight)
+  }
+
+  componentDidMount() {
+    this.scroll()
+  }
+
+  componentDidUpdate() {
+    this.scroll()
+  }
+
   render() {
     return this.props.children;
   }
@@ -21,6 +34,8 @@ class App extends Component {
       });
     });
   }
+    
+
 
   render() {
     const { messages } = this.state;
